@@ -17,16 +17,17 @@ main {
      padding: 16px;
 
      display: flex;
-     flex-wrap: ;
-     flex: 1 1 25%;
+     flex-wrap: wrap;
     }
-article{
-    display: flex;
-    border: 1px solid #183C63;
-    margin: 16px;
-    gap: 16px;
-    padding: 16px;
-
+    article{
+        display: flex;
+        border: 1px solid #183C63;
+        
+        margin: 16px;
+        gap: 16px;
+        padding: 16px;
+        
+        flex: 1 1 25%;
 
     }
 
