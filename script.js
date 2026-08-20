@@ -1,53 +1,23 @@
-```javascript
 // =====================================================
 // BLOG TECH - JAVASCRIPT
 // =====================================================
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    const body = document.body;
-    const botaoTema = document.querySelector("#botao-tema");
-    const campoPesquisa = document.querySelector("#campo-pesquisa");
-    const artigos = document.querySelectorAll("article");
-    const contadorPosts = document.querySelector("#contador-posts");
-    const semResultados = document.querySelector("#sem-resultados");
-    const botaoTopo = document.querySelector("#voltar-topo");
+    const campoPesquisa =
+        document.querySelector("#campo-pesquisa");
 
+    const artigos =
+        document.querySelectorAll("article");
 
-    // =================================================
-    // MODO ESCURO / CLARO
-    // =================================================
+    const contadorPosts =
+        document.querySelector("#contador-posts");
 
-    const temaSalvo = localStorage.getItem("tema");
+    const semResultados =
+        document.querySelector("#sem-resultados");
 
-    if (temaSalvo === "escuro") {
-        body.classList.add("modo-escuro");
-        botaoTema.textContent = "☀️ Modo claro";
-    } else {
-        botaoTema.textContent = "🌙 Modo escuro";
-    }
-
-
-    botaoTema.addEventListener("click", function () {
-
-        body.classList.toggle("modo-escuro");
-
-        const modoEscuro =
-            body.classList.contains("modo-escuro");
-
-        if (modoEscuro) {
-
-            botaoTema.textContent = "☀️ Modo claro";
-
-            localStorage.setItem("tema", "escuro");
-
-        } else {
-
-            botaoTema.textContent = "🌙 Modo escuro";
-
-            localStorage.setItem("tema", "claro");
-        }
-    });
+    const botaoTopo =
+        document.querySelector("#voltar-topo");
 
 
     // =================================================
@@ -144,74 +114,85 @@ document.addEventListener("DOMContentLoaded", function () {
     // PESQUISA
     // =================================================
 
-    campoPesquisa.addEventListener("input", function () {
+    if (campoPesquisa) {
 
-        const pesquisa =
-            campoPesquisa.value
-                .toLowerCase()
-                .trim();
+        campoPesquisa.addEventListener(
+            "input",
+            function () {
 
-        let encontrados = 0;
+                const pesquisa =
+                    campoPesquisa.value
+                        .toLowerCase()
+                        .trim();
 
-
-        artigos.forEach(function (artigo) {
-
-            const texto =
-                artigo.textContent.toLowerCase();
+                let encontrados = 0;
 
 
-            if (texto.includes(pesquisa)) {
+                artigos.forEach(function (artigo) {
 
-                artigo.classList.remove("oculto");
+                    const texto =
+                        artigo.textContent.toLowerCase();
 
-                encontrados++;
 
-            } else {
+                    if (texto.includes(pesquisa)) {
 
-                artigo.classList.add("oculto");
+                        artigo.classList.remove("oculto");
+
+                        encontrados++;
+
+                    } else {
+
+                        artigo.classList.add("oculto");
+                    }
+
+                });
+
+
+                if (semResultados) {
+
+                    semResultados.hidden =
+                        encontrados !== 0;
+                }
+
             }
-
-        });
-
-
-        if (encontrados === 0) {
-
-            semResultados.hidden = false;
-
-        } else {
-
-            semResultados.hidden = true;
-        }
-
-    });
+        );
+    }
 
 
     // =================================================
     // BOTÃO VOLTAR AO TOPO
     // =================================================
 
-    window.addEventListener("scroll", function () {
+    if (botaoTopo) {
 
-        if (window.scrollY > 400) {
+        window.addEventListener(
+            "scroll",
+            function () {
 
-            botaoTopo.classList.add("visivel");
+                if (window.scrollY > 400) {
 
-        } else {
+                    botaoTopo.classList.add("visivel");
 
-            botaoTopo.classList.remove("visivel");
-        }
+                } else {
 
-    });
+                    botaoTopo.classList.remove("visivel");
+                }
+
+            }
+        );
 
 
-    botaoTopo.addEventListener("click", function () {
+        botaoTopo.addEventListener(
+            "click",
+            function () {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
 
-    });
+            }
+        );
+    }
 
 });
-```
