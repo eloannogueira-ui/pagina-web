@@ -1,96 +1,415 @@
-
+```html
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-<link rel="stylesheet" href="style.css">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Meu blog de tecnologia, programação e curiosidades."
+    >
+
+    <title>Meu Blog Tech 💻</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
-<header>
-    <h1>Meu blog tech 💻</h1>
 
-    <p>
-        Vou compartilhar conhecimentos sobre tecnologia e programação
-    </p>
+    <!-- ==========================================
+         CABEÇALHO
+         ========================================== -->
 
-    <button id="botao-tema">🌙 Modo escuro</button>
-</header>
-    <main>
+    <header>
+
+        <h1>Meu Blog Tech 💻</h1>
+
+        <p>
+            Conhecimentos, programação e curiosidades
+            do mundo da tecnologia.
+        </p>
+
+
+        <div class="controles">
+
+            <input
+                type="search"
+                id="campo-pesquisa"
+                placeholder="🔎 Pesquisar no blog..."
+                aria-label="Pesquisar no blog"
+            >
+
+            <button id="botao-tema">
+                🌙 Modo escuro
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         INFORMAÇÕES
+         ========================================== -->
+
+    <div class="info-blog">
+
+        <p>
+            📚 <strong id="contador-posts">0</strong>
+            artigos publicados
+        </p>
+
+        <p class="status">
+            Sistema online
+        </p>
+
+    </div>
+
+
+    <!-- ==========================================
+         ARTIGOS
+         ========================================== -->
+
+    <main id="lista-artigos">
+
+
+        <!-- ARTIGO 1 -->
+
         <article>
-            <img src="imagem.png"
-                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+
+            <img
+                src="imagem.png"
+                alt="Imagem conceitual de tecnologia e educação"
+            >
+
             <div>
-                <h2>Meu primeiro post</h2>
-                <p class="artigo-autor">Por: Eloan Augusto</p>
-                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de
-                    tecnologia.</p>
-                <button>❤️ <span>0</span></button>
-                <button>👍 <span>0</span></button>
+
+                <h2>
+                    Meu primeiro post
+                </h2>
+
+                <p class="artigo-autor">
+                    Por: Eloan Augusto
+                </p>
+
+                <p>
+                    Boas-vindas ao meu novo blog!
+                    Aqui vou compartilhar dicas de
+                    programação e curiosidades da área
+                    de tecnologia.
+                </p>
+
+
+                <div class="botoes-curtida">
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="coracao"
+                        aria-label="Curtir artigo"
+                    >
+                        ❤️ <span>0</span>
+                    </button>
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="like"
+                        aria-label="Curtir com gostei"
+                    >
+                        👍 <span>0</span>
+                    </button>
+
+                </div>
+
             </div>
+
         </article>
+
+
+        <!-- ARTIGO 2 -->
+
         <article>
-            <img src="imagem2.png"
-                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+
+            <img
+                src="imagem2.png"
+                alt="Ilustração relacionada ao primeiro bug de computador"
+            >
+
             <div>
-                <h2>O Inseto Real no Computador 🐛</h2>
-                <p class="artigo-autor">Por: Eloan Augusto</p>
-                <p>A palavra "bug" passou a indicar erros de programação depois que uma mariposa de verdade travou o computador Harvard Mark II, em 1947!</p>
 
-                 <p class="artigo-fonte">Fonte: Smithsonian National Museum of American History</p>
+                <h2>
+                    O Inseto Real no Computador 🐛
+                </h2>
 
-                <button>❤️ <span>0</span></button>
-                <button>👍 <span>0</span></button>
+                <p class="artigo-autor">
+                    Por: Eloan Augusto
+                </p>
+
+                <p>
+                    A palavra "bug" passou a indicar
+                    erros de programação depois que uma
+                    mariposa de verdade travou o
+                    computador Harvard Mark II, em 1947!
+                </p>
+
+                <p class="artigo-fonte">
+                    Fonte: Smithsonian National Museum
+                    of American History
+                </p>
+
+
+                <div class="botoes-curtida">
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="coracao"
+                        aria-label="Curtir artigo"
+                    >
+                        ❤️ <span>0</span>
+                    </button>
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="like"
+                        aria-label="Curtir com gostei"
+                    >
+                        👍 <span>0</span>
+                    </button>
+
+                </div>
+
             </div>
-        </article>
-         <article>
-            <img src="imagem3.png"
-                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
-            <div>
-                <h2>O Monstro de Um Milhão de Linhas 😱</h2>
-                <p class="artigo-autor">Por: Eloan Augusto</p>
-                <p>O sistema operacional Windows 10 tem cerca de 50 milhões de linhas de código! Imagine o trabalho para encontrar um erro ali!</p>
 
-                 <p class="artigo-fonte">Fonte: Microsoft</p>
-
-                <button>❤️ <span>0</span></button>
-                <button>👍 <span>0</span></button>
-            </div>
         </article>
+
+
+        <!-- ARTIGO 3 -->
+
         <article>
-            <img src="imagem4.png"
-                alt="Logotipo conceitual de tecnologia e educação: um livro aberto de onde emerge um cérebro digital brilhante, cercado por ícones de Wi-Fi, circuitos e lâmpada de ideia. Cores em tons de azul e branco.">
+
+            <img
+                src="imagem3.png"
+                alt="Ilustração relacionada a linhas de código"
+            >
+
             <div>
-                <h2>A Primeira Programadora foi uma Mulher!</h2>
-                <p class="artigo-autor">Por:Eloan Augusto</p>
-                <p>Ada Lovelace escreveu o primeiro algoritmo para a Máquina Analítica de Charles Babbage no século XIX!</p>
 
-                <p class="artigo-fonte">Fonte: revista Scientific Memoirs</p>
+                <h2>
+                    O Monstro de Um Milhão de Linhas 😱
+                </h2>
 
-                <button>❤️ <span>0</span></button>
-                <button>👍 <span>0</span></button>
+                <p class="artigo-autor">
+                    Por: Eloan Augusto
+                </p>
+
+                <p>
+                    O sistema operacional Windows 10 tem
+                    cerca de 50 milhões de linhas de código!
+                    Imagine o trabalho para encontrar um
+                    erro ali!
+                </p>
+
+                <p class="artigo-fonte">
+                    Fonte: Microsoft
+                </p>
+
+
+                <div class="botoes-curtida">
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="coracao"
+                        aria-label="Curtir artigo"
+                    >
+                        ❤️ <span>0</span>
+                    </button>
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="like"
+                        aria-label="Curtir com gostei"
+                    >
+                        👍 <span>0</span>
+                    </button>
+
+                </div>
+
             </div>
+
         </article>
-          <article>
-            <img src="imagem5.png"
-                alt="Ilustração em estilo pixel art de quatro mulheres segurando instrumentos musicais, representando a banda Les Horribles Cernettes. Abaixo, constam os textos: "FIRST WEB PHOTO", "1992" e "Les Horribles Cernettes".">
+
+
+        <!-- ARTIGO 4 -->
+
+        <article>
+
+            <img
+                src="imagem4.png"
+                alt="Ilustração de Ada Lovelace e programação"
+            >
+
             <div>
-                <h2>A Primeira Imagem da Web</h2>
-                <p class="artigo-autor">Por: Eloan Augusto</p>
-                <p>A primeira foto postada na internet, em 1992, foi do Les Horribles Cernettes, um grupo musical formado por funcionárias do CERN. Tim Berners-Lee, o criador da World Wide Web, usou a imagem editada em formato .gif para testar o envio de fotos na rede, abrindo caminho para a era visual da internet.</p>
 
-                 <p class="artigo-fonte">Fonte: CERN Document Server</p>
+                <h2>
+                    A Primeira Programadora foi uma Mulher!
+                </h2>
 
-                <button>❤️ <span>0</span></button>
-                <button>👍 <span>0</span></button>
+                <p class="artigo-autor">
+                    Por: Eloan Augusto
+                </p>
+
+                <p>
+                    Ada Lovelace escreveu o primeiro algoritmo
+                    para a Máquina Analítica de Charles Babbage
+                    no século XIX!
+                </p>
+
+                <p class="artigo-fonte">
+                    Fonte: Scientific Memoirs
+                </p>
+
+
+                <div class="botoes-curtida">
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="coracao"
+                        aria-label="Curtir artigo"
+                    >
+                        ❤️ <span>0</span>
+                    </button>
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="like"
+                        aria-label="Curtir com gostei"
+                    >
+                        👍 <span>0</span>
+                    </button>
+
+                </div>
+
             </div>
+
         </article>
+
+
+        <!-- ARTIGO 5 -->
+
+        <article>
+
+            <img
+                src="imagem5.png"
+                alt="Ilustração das Les Horribles Cernettes e a primeira imagem da web"
+            >
+
+            <div>
+
+                <h2>
+                    A Primeira Imagem da Web
+                </h2>
+
+                <p class="artigo-autor">
+                    Por: Eloan Augusto
+                </p>
+
+                <p>
+                    A primeira foto postada na internet,
+                    em 1992, foi do Les Horribles Cernettes,
+                    um grupo musical formado por funcionárias
+                    do CERN. Tim Berners-Lee, o criador da
+                    World Wide Web, usou a imagem para testar
+                    o envio de fotos pela rede.
+                </p>
+
+                <p class="artigo-fonte">
+                    Fonte: CERN Document Server
+                </p>
+
+
+                <div class="botoes-curtida">
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="coracao"
+                        aria-label="Curtir artigo"
+                    >
+                        ❤️ <span>0</span>
+                    </button>
+
+                    <button
+                        class="botao-curtir"
+                        data-tipo="like"
+                        aria-label="Curtir com gostei"
+                    >
+                        👍 <span>0</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- MENSAGEM DA PESQUISA -->
+
+        <div id="sem-resultados" hidden>
+
+            <strong>
+                🔍 Nenhum artigo encontrado
+            </strong>
+
+            Tente pesquisar por outra palavra.
+
+        </div>
+
     </main>
+
+
+    <!-- ==========================================
+         RODAPÉ
+         ========================================== -->
+
+    <footer>
+
+        <p>
+            💻 Meu Blog Tech
+        </p>
+
+        <p class="footer-tech">
+            &lt;/&gt; Desenvolvido com HTML + CSS + JavaScript
+        </p>
+
+        <p>
+            © 2026 Eloan Augusto
+        </p>
+
+    </footer>
+
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+
+    <button
+        id="voltar-topo"
+        aria-label="Voltar ao topo"
+        title="Voltar ao topo"
+    >
+        ↑
+    </button>
+
+
+    <!-- JAVASCRIPT -->
+
     <script src="script.js"></script>
+
 </body>
 
-
 </html>
+```
