@@ -1,50 +1,180 @@
-:root{
-    --cor-primaria; #183C63;
-    --cor-segundaria; #183C63;
-
-body{
-    max-width: 100vw;
+```css
+:root {
+    --cor-primaria: #183C63;
+    --cor-secundaria: #2d6da3;
+    --cor-fundo: #f4f7fb;
+    --cor-card: #ffffff;
+    --cor-texto: #183C63;
+    --cor-borda: #d8e2ec;
+    --sombra: 0 5px 15px rgba(0, 0, 0, 0.10);
 }
 
+/* MODO ESCURO */
+body.modo-escuro {
+    --cor-fundo: #121820;
+    --cor-card: #1c2631;
+    --cor-texto: #e8f1f8;
+    --cor-borda: #344454;
+    --sombra: 0 5px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* Configurações gerais */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: Arial, Helvetica, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Cabeçalho */
 header {
-    background-color: #183C63;
-    color: #FFFFFF;
+    background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+    color: #ffffff;
     text-align: center;
-    margin: 0 auto;
-    padding: 16px;
-    }
+    padding: 30px 20px;
+    box-shadow: var(--sombra);
+}
 
-main {
-    background-color: #FFFFFF;
-    color: #183C63;
-    margin: 0 auto;
-     padding: 16px;
+header h1 {
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+}
 
-     display: flex;
-     flex-wrap: wrap;
-    }
-    article{
-        display: flex;
-        border: 1px solid #183C63;
-        
-        margin: 16px;
-        gap: 16px;
-        padding: 16px;
-        
-        flex: 1 1 25%;
+header p {
+    margin: 0;
+    font-size: 1.05rem;
+}
 
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        justify-content: center;
-
-    }
-
-img {
-    width: 120px;
-    height: 120px;
-    }
-
-    .artigo-autor {
+/* Botão de modo escuro */
+#botao-tema {
+    margin-top: 20px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: var(--cor-primaria);
     font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+#botao-tema:hover {
+    transform: scale(1.05);
+    background-color: #e8f1f8;
+}
+
+/* Área dos artigos */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Cards */
+article {
+    background-color: var(--cor-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 14px;
+    padding: 20px;
+
+    flex: 1 1 calc(33.333% - 20px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    box-shadow: var(--sombra);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagens */
+article img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* Títulos */
+article h2 {
+    color: var(--cor-texto);
+    margin-top: 5px;
+}
+
+/* Autor */
+.artigo-autor {
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+/* Fonte */
+.artigo-fonte {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-style: italic;
+}
+
+/* Botões de curtida */
+article button {
+    border: 1px solid var(--cor-borda);
+    background-color: transparent;
+    color: var(--cor-texto);
+
+    padding: 8px 14px;
+    margin: 5px;
+
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+article button:hover {
+    transform: scale(1.08);
+    background-color: rgba(45, 109, 163, 0.12);
+}
+
+article button:active {
+    transform: scale(0.95);
+}
+
+/* Celular */
+@media (max-width: 800px) {
+    article {
+        flex: 1 1 calc(50% - 20px);
     }
+}
+
+@media (max-width: 550px) {
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    article {
+        flex: 1 1 100%;
+    }
+
+    main {
+        padding: 20px 12px;
+    }
+}
+```
