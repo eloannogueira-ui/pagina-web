@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -29,13 +29,57 @@
 
     <header>
 
-        <h1>Meu Blog Tech 💻</h1>
+        <div class="cabecalho-topo">
 
-        <p>
-            Conhecimentos, programação e curiosidades
-            do mundo da tecnologia.
-        </p>
+            <div>
+                <h1>Meu Blog Tech 💻</h1>
 
+                <p>
+                    Conhecimentos, programação e curiosidades
+                    do mundo da tecnologia.
+                </p>
+            </div>
+
+
+            <!-- MENU MOBILE -->
+
+            <button
+                id="botao-menu"
+                class="botao-menu"
+                aria-label="Abrir menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+        </div>
+
+
+        <!-- ======================================
+             MENU
+             ====================================== -->
+
+        <nav id="menu-principal">
+
+            <a href="#lista-artigos">📰 Artigos</a>
+
+            <a href="#favoritos-secao">⭐ Favoritos</a>
+
+            <button id="botao-notificacoes">
+                🔔
+                <span id="contador-notificacoes">0</span>
+            </button>
+
+            <button id="botao-perfil">
+                👤 Meu perfil
+            </button>
+
+        </nav>
+
+
+        <!-- ======================================
+             CONTROLES
+             ====================================== -->
 
         <div class="controles">
 
@@ -46,30 +90,38 @@
                 aria-label="Pesquisar no blog"
             >
 
-            
-            </button>
-
         </div>
 
     </header>
 
 
     <!-- ==========================================
-         INFORMAÇÕES
+         PAINEL DE INFORMAÇÕES
          ========================================== -->
 
-    <div class="info-blog">
+    <section class="painel-info">
 
-        <p>
-            📚 <strong id="contador-posts">0</strong>
-            artigos publicados
-        </p>
+        <div class="info-blog">
 
-        <p class="status">
-            Sistema online
-        </p>
+            <p>
+                📚
+                <strong id="contador-posts">0</strong>
+                artigos
+            </p>
 
-    </div>
+            <p>
+                👁️
+                <strong id="total-visualizacoes">0</strong>
+                visualizações
+            </p>
+
+            <p class="status">
+                Sistema online
+            </p>
+
+        </div>
+
+    </section>
 
 
     <!-- ==========================================
@@ -79,24 +131,46 @@
     <main id="lista-artigos">
 
 
-        <!-- ARTIGO 1 -->
+        <!-- ======================================
+             ARTIGO 1
+             ====================================== -->
 
-        <article>
+        <article
+            data-categoria="Programação"
+            data-tags="programação tecnologia javascript blog"
+            data-data="20/08/2026"
+            data-leitura="2"
+        >
+
+            <div class="categoria">
+                💻 Programação
+            </div>
 
             <img
                 src="imagem.png"
                 alt="Imagem conceitual de tecnologia e educação"
             >
 
-            <div>
+            <div class="conteudo-artigo">
+
+                <div class="informacoes-artigo">
+
+                    <span>📅 20/08/2026</span>
+
+                    <span>⏱️ 2 min de leitura</span>
+
+                </div>
+
 
                 <h2>
                     Meu primeiro post
                 </h2>
 
+
                 <p class="artigo-autor">
                     Por: Eloan Augusto
                 </p>
+
 
                 <p>
                     Boas-vindas ao meu novo blog!
@@ -106,23 +180,85 @@
                 </p>
 
 
-                <div class="botoes-curtida">
+                <div class="tags">
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="coracao"
-                        aria-label="Curtir artigo"
-                    >
-                        ❤️ <span>0</span>
+                    <span>#programação</span>
+                    <span>#tecnologia</span>
+                    <span>#blog</span>
+
+                </div>
+
+
+                <div class="botoes-artigo">
+
+                    <div class="botoes-curtida">
+
+                        <button
+                            class="botao-curtir"
+                            data-tipo="coracao"
+                        >
+                            ❤️ <span>0</span>
+                        </button>
+
+                        <button
+                            class="botao-curtir"
+                            data-tipo="like"
+                        >
+                            👍 <span>0</span>
+                        </button>
+
+                    </div>
+
+
+                    <button class="botao-favorito">
+                        ☆ Favoritar
                     </button>
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="like"
-                        aria-label="Curtir com gostei"
-                    >
-                        👍 <span>0</span>
-                    </button>
+                </div>
+
+
+                <div class="estatisticas-artigo">
+
+                    <span>
+                        👁️
+                        <strong class="visualizacoes">
+                            0
+                        </strong>
+                        visualizações
+                    </span>
+
+                    <span>
+                        💬
+                        <strong class="quantidade-comentarios">
+                            0
+                        </strong>
+                        comentários
+                    </span>
+
+                </div>
+
+
+                <div class="comentarios">
+
+                    <h3>💬 Comentários</h3>
+
+                    <div class="lista-comentarios"></div>
+
+                    <form class="form-comentario">
+
+                        <input
+                            type="text"
+                            class="campo-comentario"
+                            placeholder="Escreva um comentário..."
+                            maxlength="200"
+                            required
+                        >
+
+                        <button type="submit">
+                            Enviar
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -131,16 +267,32 @@
         </article>
 
 
-        <!-- ARTIGO 2 -->
+        <!-- ======================================
+             ARTIGO 2
+             ====================================== -->
 
-        <article>
+        <article
+            data-categoria="História da tecnologia"
+            data-tags="bug computador história tecnologia"
+            data-data="20/08/2026"
+            data-leitura="3"
+        >
+
+            <div class="categoria">
+                🐛 História da tecnologia
+            </div>
 
             <img
                 src="imagem2.png"
                 alt="Ilustração relacionada ao primeiro bug de computador"
             >
 
-            <div>
+            <div class="conteudo-artigo">
+
+                <div class="informacoes-artigo">
+                    <span>📅 20/08/2026</span>
+                    <span>⏱️ 3 min de leitura</span>
+                </div>
 
                 <h2>
                     O Inseto Real no Computador 🐛
@@ -157,29 +309,79 @@
                     computador Harvard Mark II, em 1947!
                 </p>
 
-                <p class="artigo-fonte">
-                    Fonte: Smithsonian National Museum
-                    of American History
-                </p>
+                <div class="tags">
+                    <span>#bug</span>
+                    <span>#história</span>
+                    <span>#computador</span>
+                </div>
 
+                <div class="botoes-artigo">
 
-                <div class="botoes-curtida">
+                    <div class="botoes-curtida">
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="coracao"
-                        aria-label="Curtir artigo"
-                    >
-                        ❤️ <span>0</span>
+                        <button
+                            class="botao-curtir"
+                            data-tipo="coracao"
+                        >
+                            ❤️ <span>0</span>
+                        </button>
+
+                        <button
+                            class="botao-curtir"
+                            data-tipo="like"
+                        >
+                            👍 <span>0</span>
+                        </button>
+
+                    </div>
+
+                    <button class="botao-favorito">
+                        ☆ Favoritar
                     </button>
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="like"
-                        aria-label="Curtir com gostei"
-                    >
-                        👍 <span>0</span>
-                    </button>
+                </div>
+
+                <div class="estatisticas-artigo">
+
+                    <span>
+                        👁️
+                        <strong class="visualizacoes">
+                            0
+                        </strong>
+                        visualizações
+                    </span>
+
+                    <span>
+                        💬
+                        <strong class="quantidade-comentarios">
+                            0
+                        </strong>
+                        comentários
+                    </span>
+
+                </div>
+
+                <div class="comentarios">
+
+                    <h3>💬 Comentários</h3>
+
+                    <div class="lista-comentarios"></div>
+
+                    <form class="form-comentario">
+
+                        <input
+                            type="text"
+                            class="campo-comentario"
+                            placeholder="Escreva um comentário..."
+                            maxlength="200"
+                            required
+                        >
+
+                        <button type="submit">
+                            Enviar
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -188,16 +390,32 @@
         </article>
 
 
-        <!-- ARTIGO 3 -->
+        <!-- ======================================
+             ARTIGO 3
+             ====================================== -->
 
-        <article>
+        <article
+            data-categoria="Programação"
+            data-tags="windows código programação software"
+            data-data="20/08/2026"
+            data-leitura="3"
+        >
+
+            <div class="categoria">
+                🧠 Programação
+            </div>
 
             <img
                 src="imagem3.png"
                 alt="Ilustração relacionada a linhas de código"
             >
 
-            <div>
+            <div class="conteudo-artigo">
+
+                <div class="informacoes-artigo">
+                    <span>📅 20/08/2026</span>
+                    <span>⏱️ 3 min de leitura</span>
+                </div>
 
                 <h2>
                     O Monstro de Um Milhão de Linhas 😱
@@ -214,28 +432,79 @@
                     erro ali!
                 </p>
 
-                <p class="artigo-fonte">
-                    Fonte: Microsoft
-                </p>
+                <div class="tags">
+                    <span>#windows</span>
+                    <span>#código</span>
+                    <span>#software</span>
+                </div>
 
+                <div class="botoes-artigo">
 
-                <div class="botoes-curtida">
+                    <div class="botoes-curtida">
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="coracao"
-                        aria-label="Curtir artigo"
-                    >
-                        ❤️ <span>0</span>
+                        <button
+                            class="botao-curtir"
+                            data-tipo="coracao"
+                        >
+                            ❤️ <span>0</span>
+                        </button>
+
+                        <button
+                            class="botao-curtir"
+                            data-tipo="like"
+                        >
+                            👍 <span>0</span>
+                        </button>
+
+                    </div>
+
+                    <button class="botao-favorito">
+                        ☆ Favoritar
                     </button>
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="like"
-                        aria-label="Curtir com gostei"
-                    >
-                        👍 <span>0</span>
-                    </button>
+                </div>
+
+                <div class="estatisticas-artigo">
+
+                    <span>
+                        👁️
+                        <strong class="visualizacoes">
+                            0
+                        </strong>
+                        visualizações
+                    </span>
+
+                    <span>
+                        💬
+                        <strong class="quantidade-comentarios">
+                            0
+                        </strong>
+                        comentários
+                    </span>
+
+                </div>
+
+                <div class="comentarios">
+
+                    <h3>💬 Comentários</h3>
+
+                    <div class="lista-comentarios"></div>
+
+                    <form class="form-comentario">
+
+                        <input
+                            type="text"
+                            class="campo-comentario"
+                            placeholder="Escreva um comentário..."
+                            maxlength="200"
+                            required
+                        >
+
+                        <button type="submit">
+                            Enviar
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -244,16 +513,32 @@
         </article>
 
 
-        <!-- ARTIGO 4 -->
+        <!-- ======================================
+             ARTIGO 4
+             ====================================== -->
 
-        <article>
+        <article
+            data-categoria="Programação"
+            data-tags="ada lovelace programação mulheres história"
+            data-data="20/08/2026"
+            data-leitura="3"
+        >
+
+            <div class="categoria">
+                👩‍💻 Programação
+            </div>
 
             <img
                 src="imagem4.png"
                 alt="Ilustração de Ada Lovelace e programação"
             >
 
-            <div>
+            <div class="conteudo-artigo">
+
+                <div class="informacoes-artigo">
+                    <span>📅 20/08/2026</span>
+                    <span>⏱️ 3 min de leitura</span>
+                </div>
 
                 <h2>
                     A Primeira Programadora foi uma Mulher!
@@ -269,28 +554,79 @@
                     no século XIX!
                 </p>
 
-                <p class="artigo-fonte">
-                    Fonte: Scientific Memoirs
-                </p>
+                <div class="tags">
+                    <span>#AdaLovelace</span>
+                    <span>#programação</span>
+                    <span>#história</span>
+                </div>
 
+                <div class="botoes-artigo">
 
-                <div class="botoes-curtida">
+                    <div class="botoes-curtida">
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="coracao"
-                        aria-label="Curtir artigo"
-                    >
-                        ❤️ <span>0</span>
+                        <button
+                            class="botao-curtir"
+                            data-tipo="coracao"
+                        >
+                            ❤️ <span>0</span>
+                        </button>
+
+                        <button
+                            class="botao-curtir"
+                            data-tipo="like"
+                        >
+                            👍 <span>0</span>
+                        </button>
+
+                    </div>
+
+                    <button class="botao-favorito">
+                        ☆ Favoritar
                     </button>
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="like"
-                        aria-label="Curtir com gostei"
-                    >
-                        👍 <span>0</span>
-                    </button>
+                </div>
+
+                <div class="estatisticas-artigo">
+
+                    <span>
+                        👁️
+                        <strong class="visualizacoes">
+                            0
+                        </strong>
+                        visualizações
+                    </span>
+
+                    <span>
+                        💬
+                        <strong class="quantidade-comentarios">
+                            0
+                        </strong>
+                        comentários
+                    </span>
+
+                </div>
+
+                <div class="comentarios">
+
+                    <h3>💬 Comentários</h3>
+
+                    <div class="lista-comentarios"></div>
+
+                    <form class="form-comentario">
+
+                        <input
+                            type="text"
+                            class="campo-comentario"
+                            placeholder="Escreva um comentário..."
+                            maxlength="200"
+                            required
+                        >
+
+                        <button type="submit">
+                            Enviar
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -299,16 +635,32 @@
         </article>
 
 
-        <!-- ARTIGO 5 -->
+        <!-- ======================================
+             ARTIGO 5
+             ====================================== -->
 
-        <article>
+        <article
+            data-categoria="Internet"
+            data-tags="web internet cern imagem tecnologia"
+            data-data="20/08/2026"
+            data-leitura="3"
+        >
+
+            <div class="categoria">
+                🌐 Internet
+            </div>
 
             <img
                 src="imagem5.png"
-                alt="Ilustração das Les Horribles Cernettes e a primeira imagem da web"
+                alt="Ilustração das Les Horribles Cernettes"
             >
 
-            <div>
+            <div class="conteudo-artigo">
+
+                <div class="informacoes-artigo">
+                    <span>📅 20/08/2026</span>
+                    <span>⏱️ 3 min de leitura</span>
+                </div>
 
                 <h2>
                     A Primeira Imagem da Web
@@ -319,36 +671,86 @@
                 </p>
 
                 <p>
-                    A primeira foto postada na internet,
-                    em 1992, foi do Les Horribles Cernettes,
-                    um grupo musical formado por funcionárias
-                    do CERN. Tim Berners-Lee, o criador da
-                    World Wide Web, usou a imagem para testar
-                    o envio de fotos pela rede.
+                    A primeira foto publicada na Web foi
+                    relacionada ao grupo Les Horribles Cernettes,
+                    formado por funcionárias do CERN.
+                    Tim Berners-Lee utilizou a imagem em
+                    seus testes da World Wide Web.
                 </p>
 
-                <p class="artigo-fonte">
-                    Fonte: CERN Document Server
-                </p>
+                <div class="tags">
+                    <span>#web</span>
+                    <span>#internet</span>
+                    <span>#CERN</span>
+                </div>
 
+                <div class="botoes-artigo">
 
-                <div class="botoes-curtida">
+                    <div class="botoes-curtida">
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="coracao"
-                        aria-label="Curtir artigo"
-                    >
-                        ❤️ <span>0</span>
+                        <button
+                            class="botao-curtir"
+                            data-tipo="coracao"
+                        >
+                            ❤️ <span>0</span>
+                        </button>
+
+                        <button
+                            class="botao-curtir"
+                            data-tipo="like"
+                        >
+                            👍 <span>0</span>
+                        </button>
+
+                    </div>
+
+                    <button class="botao-favorito">
+                        ☆ Favoritar
                     </button>
 
-                    <button
-                        class="botao-curtir"
-                        data-tipo="like"
-                        aria-label="Curtir com gostei"
-                    >
-                        👍 <span>0</span>
-                    </button>
+                </div>
+
+                <div class="estatisticas-artigo">
+
+                    <span>
+                        👁️
+                        <strong class="visualizacoes">
+                            0
+                        </strong>
+                        visualizações
+                    </span>
+
+                    <span>
+                        💬
+                        <strong class="quantidade-comentarios">
+                            0
+                        </strong>
+                        comentários
+                    </span>
+
+                </div>
+
+                <div class="comentarios">
+
+                    <h3>💬 Comentários</h3>
+
+                    <div class="lista-comentarios"></div>
+
+                    <form class="form-comentario">
+
+                        <input
+                            type="text"
+                            class="campo-comentario"
+                            placeholder="Escreva um comentário..."
+                            maxlength="200"
+                            required
+                        >
+
+                        <button type="submit">
+                            Enviar
+                        </button>
+
+                    </form>
 
                 </div>
 
@@ -357,7 +759,7 @@
         </article>
 
 
-        <!-- MENSAGEM DA PESQUISA -->
+        <!-- SEM RESULTADOS -->
 
         <div id="sem-resultados" hidden>
 
@@ -370,6 +772,28 @@
         </div>
 
     </main>
+
+
+    <!-- ==========================================
+         FAVORITOS
+         ========================================== -->
+
+    <section
+        id="favoritos-secao"
+        class="favoritos-secao"
+    >
+
+        <h2>⭐ Meus favoritos</h2>
+
+        <div id="lista-favoritos">
+
+            <p>
+                Você ainda não favoritou nenhum artigo.
+            </p>
+
+        </div>
+
+    </section>
 
 
     <!-- ==========================================
@@ -393,6 +817,98 @@
     </footer>
 
 
+    <!-- ==========================================
+         PAINEL DE NOTIFICAÇÕES
+         ========================================== -->
+
+    <div
+        id="painel-notificacoes"
+        class="painel-notificacoes"
+        hidden
+    >
+
+        <div class="notificacao-cabecalho">
+
+            <strong>🔔 Notificações</strong>
+
+            <button id="fechar-notificacoes">
+                ×
+            </button>
+
+        </div>
+
+        <div id="lista-notificacoes">
+
+            <p>Nenhuma notificação nova.</p>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==========================================
+         MODAL DE PERFIL
+         ========================================== -->
+
+    <div
+        id="modal-perfil"
+        class="modal"
+        hidden
+    >
+
+        <div class="modal-conteudo">
+
+            <button
+                class="fechar-modal"
+                id="fechar-perfil"
+            >
+                ×
+            </button>
+
+            <div class="avatar">
+                👨‍💻
+            </div>
+
+            <h2>Eloan Augusto</h2>
+
+            <p>
+                Criador do Meu Blog Tech.
+            </p>
+
+            <p>
+                💻 Tecnologia • Programação • Curiosidades
+            </p>
+
+            <div class="perfil-estatisticas">
+
+                <div>
+                    <strong id="perfil-artigos">
+                        0
+                    </strong>
+                    <span>Artigos</span>
+                </div>
+
+                <div>
+                    <strong id="perfil-favoritos">
+                        0
+                    </strong>
+                    <span>Favoritos</span>
+                </div>
+
+                <div>
+                    <strong id="perfil-comentarios">
+                        0
+                    </strong>
+                    <span>Comentários</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
     <!-- BOTÃO VOLTAR AO TOPO -->
 
     <button
@@ -404,11 +920,9 @@
     </button>
 
 
-    <!-- JAVASCRIPT -->
-
     <script src="script.js"></script>
 
 </body>
 
 </html>
-
+```
